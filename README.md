@@ -1,1 +1,1 @@
-# wonder-buffalo-vr
+# Wonder Buffalo VR
