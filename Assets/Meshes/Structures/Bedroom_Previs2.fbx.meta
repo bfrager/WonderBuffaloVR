@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: 2d71e982e1fbf4a87a1130b9ecaaf418
+timeCreated: 1476546867
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bed
+    100002: //RootNode
+    100004: bottomhorizwall
+    100006: bottomLFT_verticalwall
+    100008: bottomLFT_verticalwall1
+    100010: bottomRT_horizwall
+    100012: bottomRT_verticalwall
+    100014: distanceDimension13
+    100016: door
+    100018: ground
+    100020: middleLFT_slidingdoor
+    100022: middlwRT_verticalwall
+    100024: pCube1
+    100026: pCube10
+    100028: pCube11
+    100030: pCube14
+    100032: pCube17
+    100034: pCube2
+    100036: pCube3
+    100038: pCube4
+    100040: pCube5
+    100042: pCube6
+    100044: pCube7
+    100046: pCube8
+    100048: pCube8 1
+    100050: pCube9
+    100052: tophorizwall
+    100054: topLFT_verticalwall
+    100056: topRT_horizwall
+    100058: topRT_verticalwall
+    100060: transform1
+    100062: transform10
+    100064: transform11
+    100066: transform12
+    100068: transform13
+    100070: transform2
+    100072: transform3
+    100074: transform4
+    100076: transform5
+    100078: transform6
+    100080: transform7
+    100082: transform8
+    100084: transform9
+    400000: bed
+    400002: //RootNode
+    400004: bottomhorizwall
+    400006: bottomLFT_verticalwall
+    400008: bottomLFT_verticalwall1
+    400010: bottomRT_horizwall
+    400012: bottomRT_verticalwall
+    400014: distanceDimension13
+    400016: door
+    400018: ground
+    400020: middleLFT_slidingdoor
+    400022: middlwRT_verticalwall
+    400024: pCube1
+    400026: pCube10
+    400028: pCube11
+    400030: pCube14
+    400032: pCube17
+    400034: pCube2
+    400036: pCube3
+    400038: pCube4
+    400040: pCube5
+    400042: pCube6
+    400044: pCube7
+    400046: pCube8
+    400048: pCube8 1
+    400050: pCube9
+    400052: tophorizwall
+    400054: topLFT_verticalwall
+    400056: topRT_horizwall
+    400058: topRT_verticalwall
+    400060: transform1
+    400062: transform10
+    400064: transform11
+    400066: transform12
+    400068: transform13
+    400070: transform2
+    400072: transform3
+    400074: transform4
+    400076: transform5
+    400078: transform6
+    400080: transform7
+    400082: transform8
+    400084: transform9
+    2300000: ground
+    2300002: pCube14
+    2300004: pCube17
+    3300000: ground
+    3300002: pCube14
+    3300004: pCube17
+    4300000: pCube14
+    4300002: ground
+    4300004: pCube17
+    6400000: ground
+    6400002: pCube14
+    6400004: pCube17
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

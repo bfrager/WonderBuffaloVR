@@ -1,0 +1,231 @@
+----------------------------------------
+0.4.0p2 [2016-09-21]
+----------------------------------------
+    Fixes
+    - Fixed issue where calling Play() on an HvrActor immediately after it was created would not cause the HvrActor to play unless it was set to loop.
+
+    Known Issues
+    - 'Direct' rendering does not fully support Unity's Linear Colorspace.
+    - When targeting VR as a platform, HvrRender does not render correctly if Vsync is enabled. It is recommended to set the 'V Sync Count' to 'Don't sync' in the QualitySettings.
+    - Unity's MSAA does not affect the rendering of HvrActors.
+    - Under Forward Rendering, transparent HvrActors will mask out real-time shadows.
+    - HvrActors will render over any worldspace UI elements.
+    - Very rarely when closing the Unity Editor it will lock up and display some harmless warning messages. This has not been confirmed to be an issue with the 8i Unity Plugin. It could possibly be a Unity specific issue.
+
+----------------------------------------
+0.4.0p1 [2016-09-12]
+----------------------------------------
+    Changes
+    - HvrActorProjectorShadow now takes into account the HvrActor's bounds to correctly center the projector transform.
+
+    Fixes
+    - Fixed issue with HvrActor.GetBounds() not returning valid bounds.
+
+    Known Issues
+    - 'Direct' rendering does not fully support Unity's Linear Colorspace.
+    - When targeting VR as a platform, HvrRender does not render correctly if Vsync is enabled. It is recommended to set the 'V Sync Count' to 'Don't sync' in the QualitySettings.
+    - Unity's MSAA does not affect the rendering of HvrActors.
+    - Under Forward Rendering, transparent HvrActors will mask out real-time shadows.
+    - HvrActors will render over any worldspace UI elements.
+    - Very rarely when closing the Unity Editor it will lock up and display some harmless warning messages. This has not been confirmed to be an issue with the 8i Unity Plugin. It could possibly be a Unity specific issue.
+
+----------------------------------------
+0.4.0 [2016-09-1]
+----------------------------------------
+    Changes
+    - HvrActors can now be rendered invididually using the 'Standard' rendering mode.
+    - HvrActors may color graded individually adding a HvrColorGrading component to the same GameObject.
+    - HvrActors rendered using the 'Standard' render mode can now be rendered using a custom shader. See the default 'HvrActor_Standard.shader' for an example of this.
+    - Removed HvrFader. This has been merged into the HvrActor 'Standard' rendering mode and shaders.
+    - Opened up all code that was previously within C# .dlls.
+    - Added support for Unity 5.4 internal VR integrations.
+    - HvrActors can now be cloned using the HvrActorClone component. See documentation for details.
+    - HvrRender now has three different render modes, Standard/Composite/Direct. See documentation for details.
+    - Added example scene to demonstract HvrRender's different modes.
+    - HvrRender will now take into account Unity's Camera LayerMask when rendering HvrActors.
+    - Added Dithering to the HvrColorGrading, this can reduce color banding in dark areas.
+    - Removed dependency on the Unity Standard Assets. This will address potential conflicts with other Unity Plugins that require Unity Standard Assets.
+    - HvrActors rendering will now dynamically fill in the tiny holes that were previously visible. This only applies to .hvr frames that were compressed using the 5.3 codec.
+    - Exposed additional information about the current build in the About Window.
+    - Added support for Unity's Linear Colorspace when using the HvrRender's 'Standard' rendering mode.
+    - Changes to the HvrActor will now be stored in the Undo Buffer.
+    - Suppressed compilation warnings.
+    - Added experimental Shadow Casting. This is available as a preview only.
+
+    Fixes
+    - Fixed performance regression around decompression on CPUs that do not support AVX.
+    - Fixed intermitent crash within HvrEngine.
+    - Fixed issue with the editor GameView where it would offset the viewport incorrectly.
+    - Fixed issue where changing the location or deleting an HvrActor's assigned data within the Unity Project didn't update the HvrActor.
+    - Fixed issue where Direct Mode could render into the Unity Editor windows buffers.
+    - Fixed issue where hvr data that contained the wrong bounds could cause the HvrActor to not render correctly.
+    - Fixed issue where actors would not render in the scene until the gameview was forced to be updated.
+    - Fixed memory leak when rendering using OpenGLCore.
+    - Fixed issue with HvrRender passing incorrect viewports to the HvrEngine, causing it to render to wrong place or outside of the target buffers.
+    - Fixed issue that caused Direct Rendering to stop working when switching from Forward to Deferred rendering.
+    - Fixed HvrActors using the 'Standard' render mode not rendering when using Deferred Rendering.
+    - Fixed issue where HvrActors using the 'Standard' render mode not rendering if the rendering camera also has an Antialiasing component attached.
+    - Fixed where HvrActors were not reinitializing themselves correctly after Unity recompiliation.
+    - Fixed issue with HvrActorAudioSourceSync not checking if the target AudioSource is enabled. 
+    - Fixed HvrRender 'Composite' mode not working when MSAA is enabled.
+    - Fixed PlayerInterfaceAPI.Actor_GetBounds not returning correctly scaled bounds.
+    - Fixed issue with HvrActor Occlusion culling system not always returning if the actor is visible or not in the rendering camera.
+    - Supressed error about 'd3dcompiler.dll' already existing when creating a build.
+    - Fixed crash when switching from DX11 to OpenGLCore while in the editor.
+    - Smooth point rendering now looks the same between DirectX11 and OpenGLCore.
+    - Fixed text not displaying correctly within the example scenes.
+    - Fixed HvrActor not fully initializing if there isn't an HvrRender camera in the scene that has requested to render it.
+    - HvrActors will no longer render on top of Unity's Fog. This only applies to the HvrActor 'Standard' rendering mode.
+    - Fixed issue that was causing the HvrActor inspector to dramatically slow down performance while in the editor, if it was visible.
+    - Fixed HvrRender 'Composite' mode not working with HvrColorGrading.
+    - Fixed issue within the Slate Cinematic Director Integration which was causing playback.
+    - Fixed Hvr 5.3 data not decompressing correctly on certain Android devices.
+    - Fixed HvrActors not rendering correctly on certain Android devices.
+    - General improvements and bug fixes.
+
+    Known Issues
+    - 'Direct' rendering does not fully support Unity's Linear Colorspace.
+    - When targeting VR as a platform, HvrRender does not render correctly if Vsync is enabled. It is recommended to set the 'V Sync Count' to 'Don't sync' in the QualitySettings.
+    - Unity's MSAA does not affect the rendering of HvrActors.
+    - Under Forward Rendering, transparent HvrActors will mask out real-time shadows.
+    - HvrActors will render over any worldspace UI elements.
+    - Very rarely when closing the Unity Editor it will lock up and display some harmless warning messages. This has not been confirmed to be an issue with the 8i Unity Plugin. It could possibly be a Unity specific issue.
+
+
+----------------------------------------
+0.3.1r4 [2016-08-10]
+----------------------------------------
+    Fixes
+    - Fixed rare crash which could occur while an actor is playing.
+
+    Known Issues
+    - Occasionally Actors will not render in the Scene View, it is recommended to load the scene again, or restart the Editor if this persists.
+    - Some Android devices will fail to load the HvrRender shaders if "Split Application Binary" is selected as a player option.
+
+
+----------------------------------------
+0.3.1r2 [2016-07-26]
+----------------------------------------
+    Improvements
+    - Minor improvements to performance on Android devices.
+    - Improved performance when using HvrColorGrading.
+
+    Fixes
+    - Fixed crash bug related to CPU models without AVX support.
+
+    Known Issues
+    - Occasionally Actors will not render in the Scene View, it is recommended to load the scene again, or restart the Editor if this persists.
+    - Some Android devices will fail to load the HvrRender shaders if "Split Application Binary" is selected as a player option.
+
+
+----------------------------------------
+0.3.0r22 [2016-06-22]
+----------------------------------------
+    Features
+    - Android Support
+    - Windows 7 Support
+    - Added HvrAudioSourceSync for syncing an audiosource to a HvrActor
+
+    Changes
+    - Exposed the HvrActorInterface and HvrAssetInterface within the HvrActor and HvrAsset classes
+
+    Other
+    - General bug fixes and improvements
+
+    Known Issues
+    - Occasionally Actors will not render in the Scene View, it is recommended to load the scene again, or restart the Editor if this persists.
+    - Some Android devices will fail to load the HvrRender shaders if "Split Application Binary" is selected as a player option
+    - On Windows, under OpenGL4.5, any HVR data that was compressed using the HVR5.3 codec will render as a black square.
+
+
+----------------------------------------
+0.2.1r7 [2016-06-16]
+----------------------------------------
+    Fixes
+    - Fixed issue where memory was not being released fully after destroying actors.
+    - Fixed memory leak with DX11.
+
+
+----------------------------------------
+0.2.1r4 [2016-06-14]
+----------------------------------------
+    Fixes
+    - Fixed crash related to changing scenes while actors were playing
+
+
+----------------------------------------
+0.2.1r2 [2016-05-25]
+----------------------------------------
+    Features
+    - Major gains to performance.
+        - Added dynamic lodding system
+        - Added rendering occlusion culling
+
+
+----------------------------------------
+0.2.0 [2016-04-29]
+----------------------------------------
+    Features
+    - Added support for Forward Rendering
+    - Added 'Simple' render mode to HvrRender. This mode does not use any depth compositing will not be occluded by objects in the scene.
+    - Added support for looping HvrActors
+
+    Improvements
+    - Major gains to performance under DirectX11. Upwards of 30% improvement to the average framerate.
+
+    Fixes
+    - Fixed issue where the width of the render camera was being used for the height of the viewport.
+    - General fixes and performance improvements
+
+
+----------------------------------------
+0.1.1 [2016-04-04]
+----------------------------------------
+    Features
+    - Added support for animating the Hvr Color Correction Component
+    - Added HvrFader component
+
+    Improvements
+    - Added automatic frustrum culling to give improved performance when actors are not visible
+    - Improved method of rendering actors that only partially cover the screen to give improved performance
+
+    Known Issues
+    - Intermittently the HvrActors will not render correctly, and where they should be looks like a series of colored cubes. Restarting the application can correct this.
+
+
+----------------------------------------
+0.1.0.4 [2016-03-14]
+----------------------------------------
+    Fixes
+    - Fixed issue with VR Headsets where the left eye would flicker.
+
+
+----------------------------------------
+0.1.0.3 [2016-02-29]
+----------------------------------------
+    Fixes
+    - Fixed color correction on OpenGL rendering in greyscale
+
+
+----------------------------------------
+0.1.0.2 [2016-02-29]
+----------------------------------------
+    General
+    - Updated Cinema Director to 1.4.4.0
+
+    Fixes
+    - Fixed issue where actors would continue to play even after cutscene is paused
+    - Fixed actors continuing to play when scrubbing through a cutscene, but not playing
+
+
+----------------------------------------
+0.1.0.1 [2016-02-24]
+----------------------------------------
+    Fixes
+    - Fixed issue where the bounding boxes weren't being converted to Unity's left handed coordinate system
+
+
+----------------------------------------
+0.1.0 [2016-02-24]
+----------------------------------------
+    - Initial Release
